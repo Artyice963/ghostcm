@@ -646,28 +646,16 @@
       <div class="product-badge">INSTANT DOWNLOAD</div>
       <h3>The AI Content Cheat Sheet</h3>
       <p>7 pages. Copy-paste prompts. Never run out of content again.</p>
-      <div class="starter-price">$15 <span>in USDC or ETH</span></div>
-
-      <div class="payment-detail" style="margin-bottom:0.6rem; margin-top:1.2rem;">Send payment to this wallet:</div>
-      <div class="wallet-box">
-        <span id="wallet-display">0x517824421E72293b0b2719759827720e34Bda017</span>
-        <button class="copy-btn" onclick="copyWallet()">Copy</button>
-      </div>
-      <div class="payment-detail" style="margin-top:0.5rem; font-size:0.8rem; color:#666;">
-        Ethereum mainnet &nbsp;·&nbsp; 15 USDC or ~$15 in ETH
-      </div>
-
-      <p class="starter-sub" style="margin-top:1.4rem;">
-        After sending, DM your receipt to
-        <a href="https://x.com/Ghostcmhq" target="_blank" style="color:#00ff88;">@Ghostcmhq</a>
-        on X and we'll send your PDF within minutes.
-      </p>
-      <a href="https://x.com/Ghostcmhq" target="_blank" style="
-        display:inline-block; margin-top:1rem;
+      <div class="starter-price">$15 <span>one-time</span></div>
+      <a href="https://buy.stripe.com/bJe4gycDpeyo1I9cji7Re03" style="
+        display:inline-block; margin-top:1.2rem;
         background:#00ff88; color:#000; font-weight:800;
-        padding:12px 28px; border-radius:100px;
-        text-decoration:none; font-size:0.95rem;
-      ">DM @Ghostcmhq on X &rarr;</a>
+        padding:14px 36px; border-radius:100px;
+        text-decoration:none; font-size:1rem; letter-spacing:-0.01em;
+      ">Buy Now — $15 &rarr;</a>
+      <p class="starter-sub" style="margin-top:1rem;">
+        Secure checkout via Stripe. PDF delivered to your email instantly after payment.
+      </p>
     </div>
   </div>
 
@@ -940,15 +928,6 @@
   </footer>
 
   <script>
-    function copyWallet() {
-      const addr = document.getElementById('wallet-display').textContent.trim();
-      navigator.clipboard.writeText(addr).then(() => {
-        const btn = document.querySelector('.copy-btn');
-        btn.textContent = 'Copied!';
-        setTimeout(() => btn.textContent = 'Copy', 2000);
-      });
-    }
-
     function toggleFaq(btn) {
       const answer = btn.nextElementSibling;
       const isOpen = btn.classList.contains('open');
