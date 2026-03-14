@@ -569,6 +569,50 @@
     }
 
     hr.divider { border: none; border-top: 1px solid var(--border); }
+
+    /* FAQ */
+    .faq-list { max-width: 720px; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+      padding: 1.3rem 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      transition: color 0.2s;
+      letter-spacing: -0.01em;
+    }
+    .faq-q:hover { color: var(--accent); }
+    .faq-q.open { color: var(--accent); }
+    .faq-arrow {
+      font-size: 1.1rem;
+      color: var(--accent);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+    .faq-q.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      display: none;
+      padding-bottom: 1.3rem;
+    }
+    .faq-a p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+    .faq-a.open { display: block; }
   </style>
 </head>
 <body>
@@ -801,6 +845,88 @@
     </div>
   </div>
 
+  <hr class="divider" />
+
+  <!-- FAQ -->
+  <div class="section" id="faq">
+    <div class="section-label">FAQ</div>
+    <h2>Questions we get a lot.</h2>
+    <p class="section-sub">If you don't see your question here, DM us at <a href="https://x.com/Ghostcmhq" target="_blank" style="color:var(--accent);text-decoration:none;">@Ghostcmhq</a> or email <a href="mailto:hello@ghostcm.com" style="color:var(--accent);text-decoration:none;">hello@ghostcm.com</a>.</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do I keep ownership of my X account?
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a">
+          <p>100%. You own the X Developer App and the API keys. Ghost never has your login credentials — we operate through the official API, the same way all legitimate third-party tools do. You can revoke access instantly at any time from your X developer settings.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How are my API keys stored safely?
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a">
+          <p>Your keys are stored encrypted on our servers and are never shared or sold. We use them only to post and engage on your behalf — nothing else. You can rotate or revoke them from X any time, and we'll update the config within 24 hours.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What does "your brand voice" actually mean?
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a">
+          <p>During onboarding you give us 3–5 sentences describing how your project talks — tone, phrases you use, things you never say. We use that to build your content queue. You review and approve the first batch before anything goes live. If something doesn't sound right, we rewrite it.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I cancel anytime?
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a">
+          <p>Yes. No contracts, no lock-in. Cancel before your next billing date and you won't be charged again. We'll send you a final report and shut down automation cleanly — your account stays yours.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Will it look like a bot?
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a">
+          <p>No. Every post is written in your brand voice, not generic AI slop. Auto-replies use bot detection to skip obvious spam accounts and only engage real humans. Posts are spaced naturally throughout the day — nothing looks automated to someone scrolling your timeline.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How long does setup actually take?
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a">
+          <p>48 hours from when you complete the onboarding form. Most of that time is us building your content queue and getting it approved. The technical deployment itself takes about 30 minutes once we have your keys and brand direction.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What if I want to post something myself?
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a">
+          <p>Go ahead — Ghost works alongside you, not instead of you. Post whenever you want. Ghost fills the gaps so your account is never dark. The automation and your manual posts stack on top of each other.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- PRE-CTA CONTACT NUDGE -->
+  <div style="text-align:center; padding: 3rem 6% 0;">
+    <p style="color:var(--muted); font-size:0.95rem;">Have a question before committing? <a href="mailto:hello@ghostcm.com" style="color:var(--accent);text-decoration:none;font-weight:600;">Email us</a> or <a href="https://x.com/Ghostcmhq" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">DM @Ghostcmhq</a> — we reply fast.</p>
+  </div>
+
   <!-- CTA -->
   <div class="cta-section" id="contact">
     <h2>Ready to disappear?</h2>
@@ -814,89 +940,29 @@
   </footer>
 
   <script>
-    (function () {
-      const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-        ? 'http://localhost:8091'
-        : 'https://ghostcm.com';
-
-      let pollInterval = null;
-      let currentOrderId = null;
-
-      const form        = document.getElementById('crypto-order-form');
-      const emailInput  = document.getElementById('buyer-email');
-      const orderBtn    = document.getElementById('order-btn');
-      const panel       = document.getElementById('payment-panel');
-      const statusEl    = document.getElementById('payment-status');
-
-      function copyWallet() {
-        const addr = document.getElementById('wallet-display').textContent;
-        navigator.clipboard.writeText(addr).then(() => {
-          const btn = document.querySelector('.copy-btn');
-          btn.textContent = 'Copied!';
-          setTimeout(() => btn.textContent = 'Copy', 2000);
-        });
-      }
-      window.copyWallet = copyWallet;
-
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const email = emailInput.value.trim();
-        if (!email) return;
-
-        orderBtn.disabled = true;
-        orderBtn.textContent = 'Creating order...';
-
-        try {
-          const res = await fetch(`${API_BASE}/crypto-order`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email }),
-          });
-
-          if (!res.ok) throw new Error(`Server error: ${res.status}`);
-          const data = await res.json();
-
-          currentOrderId = data.order_id;
-          panel.style.display = 'block';
-          statusEl.className  = 'waiting';
-          statusEl.style.display = 'block';
-          statusEl.textContent = '\u{1F7E2} Waiting for payment... checking every 10 seconds';
-
-          orderBtn.textContent = 'Order created \u2713';
-
-          startPolling(currentOrderId);
-        } catch (err) {
-          orderBtn.disabled    = false;
-          orderBtn.textContent = 'Get Instant Access \u2192';
-          alert('Something went wrong. Please try again or contact hello@ghostcm.com');
-          console.error(err);
-        }
+    function copyWallet() {
+      const addr = document.getElementById('wallet-display').textContent.trim();
+      navigator.clipboard.writeText(addr).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 2000);
       });
+    }
 
-      function startPolling(orderId) {
-        if (pollInterval) clearInterval(pollInterval);
-        pollInterval = setInterval(() => checkStatus(orderId), 10000);
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-q.open').forEach(b => {
+        b.classList.remove('open');
+        b.nextElementSibling.classList.remove('open');
+      });
+      // Open clicked if it wasn't already open
+      if (!isOpen) {
+        btn.classList.add('open');
+        answer.classList.add('open');
       }
-
-      async function checkStatus(orderId) {
-        try {
-          const res  = await fetch(`${API_BASE}/order-status/${orderId}`);
-          if (!res.ok) return;
-          const data = await res.json();
-
-          if (data.paid) {
-            clearInterval(pollInterval);
-            statusEl.className   = 'confirmed';
-            statusEl.textContent = '\u2705 Payment confirmed! Check your email \u2014 the cheat sheet is on its way.';
-            orderBtn.textContent = 'Payment confirmed \u2705';
-          } else {
-            statusEl.textContent = '\u{1F7E2} Waiting for payment... checking every 10 seconds';
-          }
-        } catch (err) {
-          console.warn('Status check failed:', err);
-        }
-      }
-    })();
+    }
   </script>
 </body>
 </html>
