@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ghost — Your Community Manager. Invisible. Always On.</title>
   <meta name="description" content="Automated X and Discord community management for NFT projects, token launches, and Web3 brands. Set it and forget it." />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" href="favicon-32.png" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -351,6 +354,163 @@
     .compare-table td:nth-child(3) { color: var(--muted); }
     .compare-table tr:last-child td { border-bottom: none; }
 
+    /* STARTER PRODUCT */
+    .starter-product {
+      background: linear-gradient(135deg, #0d1a0f 0%, #0a0a0a 100%);
+      border: 1px solid #00ff88;
+      border-radius: 20px;
+      padding: 2.5rem 3rem;
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 3rem;
+      box-shadow: 0 0 60px rgba(0,255,136,0.08);
+    }
+    .product-badge {
+      display: inline-block;
+      background: #00ff88;
+      color: #000;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+    .starter-product h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+    .starter-product > p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin-bottom: 1.2rem;
+    }
+    .starter-price {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #00ff88;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.4rem;
+      line-height: 1;
+    }
+    .starter-price span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    #crypto-order-form {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+    #crypto-order-form input[type="email"] {
+      flex: 1;
+      min-width: 200px;
+      background: #111111;
+      border: 1px solid #333333;
+      color: var(--white);
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+    }
+    #crypto-order-form input[type="email"]:focus {
+      border-color: #00ff88;
+    }
+    #crypto-order-form button {
+      background: #00ff88;
+      color: #000;
+      border: none;
+      padding: 0.7rem 1.4rem;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    #crypto-order-form button:hover { background: #00e87a; }
+    #crypto-order-form button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .starter-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    /* Payment instructions panel */
+    #payment-panel {
+      display: none;
+      background: #0d0d0d;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1.2rem;
+      text-align: left;
+    }
+    #payment-panel h4 {
+      color: #00ff88;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    .wallet-box {
+      background: #161616;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 0.7rem 1rem;
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: #fff;
+      word-break: break-all;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .copy-btn {
+      background: #00ff88;
+      color: #000;
+      border: none;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .payment-detail {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+    .payment-detail strong { color: #fff; }
+    #payment-status {
+      margin-top: 1rem;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: none;
+    }
+    #payment-status.waiting {
+      background: rgba(255,200,0,0.08);
+      border: 1px solid rgba(255,200,0,0.3);
+      color: #ffc800;
+      display: block;
+    }
+    #payment-status.confirmed {
+      background: rgba(0,255,136,0.08);
+      border: 1px solid #00ff88;
+      color: #00ff88;
+      display: block;
+    }
+
     /* CTA SECTION */
     .cta-section {
       text-align: center;
@@ -408,6 +568,43 @@
       <a href="#how-it-works" class="btn-secondary">How it works</a>
     </div>
   </div>
+
+  <!-- STARTER PRODUCT -->
+  <div class="section" id="cheatsheet">
+    <div class="section-label">Start Here</div>
+    <h2>Try us for $15.</h2>
+    <p class="section-sub">Not ready to commit to a monthly plan? Grab the cheat sheet first. See exactly how we think about content.</p>
+
+    <div class="starter-product">
+      <div class="product-badge">INSTANT DOWNLOAD</div>
+      <h3>The AI Content Cheat Sheet</h3>
+      <p>7 pages. Copy-paste prompts. Never run out of content again.</p>
+      <div class="starter-price">$15 <span>in USDC or ETH</span></div>
+
+      <div class="payment-detail" style="margin-bottom:0.6rem; margin-top:1.2rem;">Send payment to this wallet:</div>
+      <div class="wallet-box">
+        <span id="wallet-display">0x517824421E72293b0b2719759827720e34Bda017</span>
+        <button class="copy-btn" onclick="copyWallet()">Copy</button>
+      </div>
+      <div class="payment-detail" style="margin-top:0.5rem; font-size:0.8rem; color:#666;">
+        Ethereum mainnet &nbsp;·&nbsp; 15 USDC or ~$15 in ETH
+      </div>
+
+      <p class="starter-sub" style="margin-top:1.4rem;">
+        After sending, DM your receipt to
+        <a href="https://x.com/Ghostcmhq" target="_blank" style="color:#00ff88;">@Ghostcmhq</a>
+        on X and we'll send your PDF within minutes.
+      </p>
+      <a href="https://x.com/Ghostcmhq" target="_blank" style="
+        display:inline-block; margin-top:1rem;
+        background:#00ff88; color:#000; font-weight:800;
+        padding:12px 28px; border-radius:100px;
+        text-decoration:none; font-size:0.95rem;
+      ">DM @Ghostcmhq on X &rarr;</a>
+    </div>
+  </div>
+
+  <hr class="divider" />
 
   <!-- PROOF -->
   <div class="proof">
@@ -592,5 +789,90 @@
     <p>© 2026 Ghost · ghostcm.com · Built by builders who got tired of managing socials.</p>
   </footer>
 
+  <script>
+    (function () {
+      const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? 'http://localhost:8091'
+        : 'https://ghostcm.com';
+
+      let pollInterval = null;
+      let currentOrderId = null;
+
+      const form        = document.getElementById('crypto-order-form');
+      const emailInput  = document.getElementById('buyer-email');
+      const orderBtn    = document.getElementById('order-btn');
+      const panel       = document.getElementById('payment-panel');
+      const statusEl    = document.getElementById('payment-status');
+
+      function copyWallet() {
+        const addr = document.getElementById('wallet-display').textContent;
+        navigator.clipboard.writeText(addr).then(() => {
+          const btn = document.querySelector('.copy-btn');
+          btn.textContent = 'Copied!';
+          setTimeout(() => btn.textContent = 'Copy', 2000);
+        });
+      }
+      window.copyWallet = copyWallet;
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        if (!email) return;
+
+        orderBtn.disabled = true;
+        orderBtn.textContent = 'Creating order...';
+
+        try {
+          const res = await fetch(`${API_BASE}/crypto-order`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+          });
+
+          if (!res.ok) throw new Error(`Server error: ${res.status}`);
+          const data = await res.json();
+
+          currentOrderId = data.order_id;
+          panel.style.display = 'block';
+          statusEl.className  = 'waiting';
+          statusEl.style.display = 'block';
+          statusEl.textContent = '\u{1F7E2} Waiting for payment... checking every 10 seconds';
+
+          orderBtn.textContent = 'Order created \u2713';
+
+          startPolling(currentOrderId);
+        } catch (err) {
+          orderBtn.disabled    = false;
+          orderBtn.textContent = 'Get Instant Access \u2192';
+          alert('Something went wrong. Please try again or contact hello@ghostcm.com');
+          console.error(err);
+        }
+      });
+
+      function startPolling(orderId) {
+        if (pollInterval) clearInterval(pollInterval);
+        pollInterval = setInterval(() => checkStatus(orderId), 10000);
+      }
+
+      async function checkStatus(orderId) {
+        try {
+          const res  = await fetch(`${API_BASE}/order-status/${orderId}`);
+          if (!res.ok) return;
+          const data = await res.json();
+
+          if (data.paid) {
+            clearInterval(pollInterval);
+            statusEl.className   = 'confirmed';
+            statusEl.textContent = '\u2705 Payment confirmed! Check your email \u2014 the cheat sheet is on its way.';
+            orderBtn.textContent = 'Payment confirmed \u2705';
+          } else {
+            statusEl.textContent = '\u{1F7E2} Waiting for payment... checking every 10 seconds';
+          }
+        } catch (err) {
+          console.warn('Status check failed:', err);
+        }
+      }
+    })();
+  </script>
 </body>
 </html>
